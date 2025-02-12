@@ -1,0 +1,19 @@
+<?php
+require_once 'Product.php';
+
+class Clothes extends Product {
+    public $size;
+    public $material;
+
+    public function __construct($name, $price, $category, $size, $material) {
+        parent::__construct($name, $price, $category);
+        $this->size = $size;
+        $this->material = $material;
+    }
+
+    public function getDetails() {
+        return parent::getDetails() . "<br>Size: " . $this->size . "<br>Material: " . $this->material;
+    }
+}
+?>
+
