@@ -1,0 +1,29 @@
+php<?
+echo "First Run:\n";
+$electronics1 = new Electronics("Laptop", 1200, "Electronics", "1 year");
+$food1 = new Food("Milk", 3, "Food", "2024-03-15");
+$clothes1 = new Clothes("Shirt", 25, "Clothes", "M", "Cotton");
+echo $electronics1->getDetails() . "\n";
+echo $food1->getDetails() . "\n";
+echo $clothes1->getDetails() . "\n\n";
+
+
+echo "Second Run:\n";
+$electronics2 = new Electronics("TV", 800, "Electronics", "2 years");
+$food2 = new Food("Bread", 2, "Food", "2024-03-18");
+$clothes2 = new Clothes("Pants", 40, "Clothes", "L", "Polyester");
+echo $electronics2->getDetails() . "\n";
+echo $food2->getDetails() . "\n";
+echo $clothes2->getDetails() . "\n\n";
+
+
+echo "Third Run:\n";
+$electronics3 = new Electronics("Phone", 1000, "Electronics", "1 year");
+$food3 = new Food("Cheese", 5, "Food", "2024-04-10");
+$clothes3 = new Clothes("Jacket", 75, "Clothes", "XL", "Leather");
+echo $electronics3->getDetails() . "\n";
+echo $food3->getDetails() . "\n";
+echo $clothes3->getDetails() . "\n";
+
+?<
+
