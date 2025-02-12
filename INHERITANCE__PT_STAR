@@ -1,0 +1,91 @@
+<?php
+class Product {
+    public $name;
+    public $price;
+    public $category;
+
+    public function __construct($name, $price, $category) {
+        $this->name = $name;
+        $this->price = $price;
+        $this->category = $category;
+    }
+
+    public function getDetails() {
+        return "Name: " . $this->name . "<br>Price: " . $this->price . "<br>Category: " . $this->category;
+    }
+}
+
+require_once 'Product.php';
+
+class Electronics extends Product {
+    public $warrantyPeriod;
+
+    public function __construct($name, $price, $category, $warrantyPeriod) {
+        parent::__construct($name, $price, $category);
+        $this->warrantyPeriod = $warrantyPeriod;
+    }
+
+    public function getDetails() {
+        return parent::getDetails() . "<br>Warranty Period: " . $this->warrantyPeriod;
+    }
+}
+
+require_once 'Product.php';
+
+class Food extends Product {
+    public $expirationDate;
+
+    public function __construct($name, $price, $category, $expirationDate) {
+        parent::__construct($name, $price, $category);
+        $this->expirationDate = $expirationDate;
+    }
+
+    public function getDetails() {
+        return parent::getDetails() . "<br>Expiration Date: " . $this->expirationDate;
+    }
+}
+
+require_once 'Product.php';
+
+class Clothes extends Product {
+    public $size;
+    public $material;
+
+    public function __construct($name, $price, $category, $size, $material) {
+        parent::__construct($name, $price, $category);
+        $this->size = $size;
+        $this->material = $material;
+    }
+
+    public function getDetails() {
+        return parent::getDetails() . "<br>Size: " . $this->size . "<br>Material: " . $this->material;
+    }
+}
+
+echo "<h1>First Run:</h1>";
+$electronics1 = new Electronics("Laptop", 1200, "Electronics", "1 year");
+$food1 = new Food("Milk", 3, "Food", "2024-03-15");
+$clothes1 = new Clothes("Shirt", 25, "Clothes", "M", "Cotton");
+echo $electronics1->getDetails() . "<br><br>";
+echo $food1->getDetails() . "<br><br>";
+echo $clothes1->getDetails() . "<br><br>";
+
+
+echo "<h1>Second Run:</h1>";
+$electronics2 = new Electronics("TV", 800, "Electronics", "2 years");
+$food2 = new Food("Bread", 2, "Food", "2024-03-18");
+$clothes2 = new Clothes("Pants", 40, "Clothes", "L", "Polyester");
+echo $electronics2->getDetails() . "<br><br>";
+echo $food2->getDetails() . "<br><br>";
+echo $clothes2->getDetails() . "<br><br>";
+
+
+echo "<h1>Third Run:</h1>";
+$electronics3 = new Electronics("Phone", 1000, "Electronics", "1 year");
+$food3 = new Food("Cheese", 5, "Food", "2024-04-10");
+$clothes3 = new Clothes("Jacket", 75, "Clothes", "XL", "Leather");
+echo $electronics3->getDetails() . "<br><br>";
+echo $food3->getDetails() . "<br><br>";
+echo $clothes3->getDetails() . "<br><br>";
+
+?>
